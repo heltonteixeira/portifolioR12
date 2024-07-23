@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    padding-top: 56px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+.jumbotron {
+    background-image: url('PLACEHOLDER_IMAGEM_FUNDO_HEADER');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.timeline {
+    position: relative;
+    padding: 0;
+    list-style: none;
+}
+
+.timeline:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background-color: #e9ecef;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-img {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    top: 0;
+}
+
+.timeline-content {
+    width: 45%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 3px 0 #d7e4ed;
+    border-radius: 5px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    float: right;
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.social-icons a {
+    color: #007bff;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
+}
