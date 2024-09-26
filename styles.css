@@ -1,82 +1,186 @@
+:root {
+    --primary-color: #004499;
+    --secondary-color-yellow: #FFD700;
+    --secondary-color-gray: #F2F2F2;
+    --font-primary: 'Roboto Slab', serif;
+    --font-secondary: 'Open Sans', sans-serif;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    padding-top: 56px;
+    font-family: var(--font-secondary);
+    color: #333;
+    padding-top: 56px; /* Adjust for fixed navbar */
 }
 
-.section {
-    padding: 80px 0;
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
 }
 
-.jumbotron {
-    background-image: url('PLACEHOLDER_IMAGEM_FUNDO_HEADER');
+.navbar {
+    background-color: var(--secondary-color-gray) !important;
+}
+
+.navbar-brand, .nav-link {
+    color: var(--primary-color) !important;
+}
+
+#hero {
+    background-color: var(--primary-color);
+    background-image: url('assets/optimized/WhatsApp Image 2024-07-25 at 14.10.54.jpeg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-.timeline {
+    padding: 100px 0;
     position: relative;
-    padding: 0;
-    list-style: none;
 }
 
-.timeline:before {
-    content: "";
+#hero::before {
+    content: '';
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
-    left: 50%;
-    width: 2px;
-    margin-left: -1px;
-    background-color: #e9ecef;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
-.timeline-item {
+#hero .container {
     position: relative;
-    margin-bottom: 50px;
+    z-index: 1;
 }
 
-.timeline-img {
-    width: 30px;
-    height: 30px;
-    background-color: #007bff;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    margin-left: -15px;
-    top: 0;
+#hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
 }
 
-.timeline-content {
-    width: 45%;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 3px 0 #d7e4ed;
-    border-radius: 5px;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    float: right;
-}
-
-.card {
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.social-icons a {
-    color: #007bff;
+#hero h2 {
     font-size: 1.5rem;
-    transition: color 0.3s;
+    margin-bottom: 2rem;
 }
 
-.social-icons a:hover {
-    color: #0056b3;
+.btn-primary {
+    background-color: var(--secondary-color-yellow);
+    border-color: var(--secondary-color-yellow);
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #e6c200;
+    border-color: #e6c200;
+    color: var(--primary-color);
+}
+
+#about img {
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
+}
+
+#experience {
+    background-color: var(--secondary-color-gray);
+}
+
+#experience .row {
+    margin-bottom: 2rem;
+}
+
+#experience h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#philosophy {
+    background-color: #fff;
+}
+
+#philosophy p {
+    margin-bottom: 1rem;
+}
+
+#achievements {
+    background-color: var(--secondary-color-gray);
+}
+
+#achievements ul {
+    padding-left: 1.5rem;
+}
+
+#achievements li {
+    margin-bottom: 0.5rem;
+}
+
+#portfolio .card {
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#portfolio .card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+#portfolio .card:hover img {
+    transform: scale(1.05);
+}
+
+#contact {
+    background-color: var(--secondary-color-gray);
+}
+
+footer {
+    background-color: var(--primary-color) !important;
+}
+
+/* Lazy loading styles */
+.lazy {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.lazy.loaded {
+    opacity: 1;
+}
+
+/* Image gallery styles */
+.img-fluid {
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero h2 {
+        font-size: 1.2rem;
+    }
+
+    #experience .col-md-6 {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Additional styles for new sections */
+#philosophy, #achievements {
+    padding: 4rem 0;
+}
+
+#philosophy h2, #achievements h2 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+#achievements h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#portfolio h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+#portfolio .btn-primary {
+    margin-top: 1rem;
 }
